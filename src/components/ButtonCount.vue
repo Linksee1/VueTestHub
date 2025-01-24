@@ -1,20 +1,19 @@
 <script setup lang="ts">
 
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
-const count = ref(0)
+const count = ref(10)
 
 function increment() {
   count.value++
 }
 
-onMounted(() => {
-  console.log(`The initial count is ${count.value}.`)
-})
 </script>
 
 <template>
-  <button @click="increment">Count is: {{ count }} <slot></slot></button>
+  <v-btn theme="light" @click="increment">Count is: {{ count }}
+    <slot></slot>
+  </v-btn>
 </template>
 
 <style scoped>
